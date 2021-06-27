@@ -6947,6 +6947,30 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
+"ts-typelevel-graph@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "ts-typelevel-graph@workspace:."
+  dependencies:
+    "@types/jest": ^26.0.20
+    "@typescript-eslint/eslint-plugin": ^4.25.0
+    "@typescript-eslint/parser": ^4.25.0
+    cspell: ^5.5.2
+    docs-ts: ^0.6.10
+    eslint: ^7.27.0
+    fast-check: ^2.13.0
+    fp-ts: ^2.9.5
+    jest: ^26.6.3
+    markdown-magic: ^2.0.0
+    prettier: ^2.2.1
+    prettier-plugin-jsdoc: ^0.3.13
+    ts-jest: ^26.5.3
+    ts-typelevel-map: "no-day/ts-typelevel-map#main"
+    typescript: ^4.2.3
+  peerDependencies:
+    fp-ts: ^2.9.5
+  languageName: unknown
+  linkType: soft
+
 "ts-typelevel-map@no-day/ts-typelevel-map#main":
   version: 1.0.0
   resolution: "ts-typelevel-map@https://github.com/no-day/ts-typelevel-map.git#commit=c5b04e01366667ba07a4d0fafed17752c7444aa2"
@@ -7040,30 +7064,6 @@ fsevents@^2.1.2:
   checksum: c9ef0176aaf32593514c31e5c6edc1db970847aff6e1f0a0570a6ac0cc996335792f394c2fcec59cc76691d22a01888ea073a2f3c6930cfcf7c519addf4e2ad7
   languageName: node
   linkType: hard
-
-"typelevel-graph@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "typelevel-graph@workspace:."
-  dependencies:
-    "@types/jest": ^26.0.20
-    "@typescript-eslint/eslint-plugin": ^4.25.0
-    "@typescript-eslint/parser": ^4.25.0
-    cspell: ^5.5.2
-    docs-ts: ^0.6.10
-    eslint: ^7.27.0
-    fast-check: ^2.13.0
-    fp-ts: ^2.9.5
-    jest: ^26.6.3
-    markdown-magic: ^2.0.0
-    prettier: ^2.2.1
-    prettier-plugin-jsdoc: ^0.3.13
-    ts-jest: ^26.5.3
-    ts-typelevel-map: "no-day/ts-typelevel-map#main"
-    typescript: ^4.2.3
-  peerDependencies:
-    fp-ts: ^2.9.5
-  languageName: unknown
-  linkType: soft
 
 typescript@^4.2.3:
   version: 4.3.4

@@ -3,4 +3,10 @@ dist/
 yarn-error.log
 docs/modules/*.ts.md
 docs/_site
-.yarn/cache
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

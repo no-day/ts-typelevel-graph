@@ -27,6 +27,7 @@ jobs:
       - run: yarn run build
       - run: yarn run test
       - run: yarn run lint
+      - run: yarn run spell
   deploy-docs:
     needs:
       - build
