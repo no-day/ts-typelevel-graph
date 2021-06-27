@@ -7,7 +7,13 @@ import * as TM from 'ts-typelevel-map'
 // Model
 // -----------------------------------------------------------------------------
 
-export type Graph<C extends Config = Config> = {
+/**
+ * @since 1.0.0
+ * @category Model
+ */
+export type Graph<C extends Config = Config> = InternalGraph
+
+type InternalGraph<C extends Config = Config> = {
   config: C
   nodes: TM.Map<C['nodeId'], C['node']>
   edges: TM.Map<C['edgeId'], C['edge']>
