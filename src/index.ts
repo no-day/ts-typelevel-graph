@@ -1,6 +1,5 @@
 /** @since 1.0.0 */
 
-import { pipe } from 'fp-ts/function'
 import * as TM from 'ts-typelevel-map'
 
 // -----------------------------------------------------------------------------
@@ -11,7 +10,7 @@ import * as TM from 'ts-typelevel-map'
  * @since 1.0.0
  * @category Model
  */
-export type Graph<C extends Config = Config> = InternalGraph
+export type Graph<C extends Config = Config> = InternalGraph<C>
 
 type InternalGraph<C extends Config = Config> = {
   config: C
@@ -87,7 +86,7 @@ type CheckExistence<
   NIA extends G['config']['nodeId'],
   NIB extends G['config']['nodeId'],
   G extends Graph
-> = true
+> = [NIA, NIB] extends null ? true : true
 
 type InsertEdge_<
   EI extends G['config']['edgeId'],
@@ -108,7 +107,10 @@ type InsertEdge_<
     : never
   : 'err edge exists'
 
-type HasCycle<NI extends G['config']['nodeId'], G extends Graph> = true
+type HasCycle<
+  NI extends G['config']['nodeId'],
+  G extends Graph
+> = NI extends null ? true : true
 
 type InternalInsertEdge<
   EI extends G['config']['edgeId'],
@@ -137,3 +139,33 @@ type InternalInsertEdge<
  * @category Constructors
  */
 export type Empty<C extends Config> = InternalEmpty<C>
+
+// -----------------------------------------------------------------------------
+// Utils
+// -----------------------------------------------------------------------------
+
+/**
+ * TODO
+ *
+ * @since 1.0.0
+ * @category Utils
+ */
+export type InsertNode<
+  NI extends G['config']['nodeId'],
+  N extends G['config']['node'],
+  G extends Graph
+> = InternalInsertNode<NI, N, G>
+
+/**
+ * TODO
+ *
+ * @since 1.0.0
+ * @category Utils
+ */
+export type InsertEdge<
+  EI extends G['config']['edgeId'],
+  E extends G['config']['edge'],
+  NIA extends G['config']['nodeId'],
+  NIB extends G['config']['nodeId'],
+  G extends Graph
+> = InternalInsertEdge<EI, E, NIA, NIB, G>
